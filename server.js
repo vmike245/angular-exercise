@@ -36,7 +36,7 @@ app.delete('/todos/:id', ({ params: { id } }, res) => {
 });
 
 // Create link to Angular build directory
-var distDir = __dirname + '/build/';
+var distDir = __dirname + '/dist/angular-exercise';
 app.use(express.static(distDir));
 
 app.listen(portNumber, () =>
