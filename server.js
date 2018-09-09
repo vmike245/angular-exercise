@@ -8,11 +8,11 @@ const portNumber = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
-app.get('/todos', ({ query: { from, to } }, res) => {
+app.get('/api/todos', ({ query: { from, to } }, res) => {
   return res.send(todoFunctions.getTodos());
 });
 
-app.post('/todos', ({ body }, res) => {
+app.post('/api/todos', ({ body }, res) => {
   try {
     const newTodo = todoFunctions.addTodo(body);
     res.status(201).send(newTodo);
@@ -21,7 +21,7 @@ app.post('/todos', ({ body }, res) => {
   }
 });
 
-app.put('/todos/:id', ({ body, params: { id } }, res) => {
+app.put('/api/todos/:id', ({ body, params: { id } }, res) => {
   try {
     const updatedTodo = todoFunctions.updateTodo(id, body);
     res.send(updatedTodo);
@@ -30,7 +30,7 @@ app.put('/todos/:id', ({ body, params: { id } }, res) => {
   }
 });
 
-app.delete('/todos/:id', ({ params: { id } }, res) => {
+app.delete('/api/todos/:id', ({ params: { id } }, res) => {
   todoFunctions.deleteTodo(id);
   res.send();
 });

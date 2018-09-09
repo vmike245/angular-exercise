@@ -1,0 +1,12 @@
+<div class="d-flex">
+  <div class="d-flex todo-list">
+    <div class="todo-card" *ngFor="let todo of todoList" >
+      <span>
+        {{ todo.name }}
+      </span>
+      <span class="delete-button" (click)="deleteTodo(todo.id)">
+        &#10006;
+      </span>
+    </div>
+  </div>
+</div>

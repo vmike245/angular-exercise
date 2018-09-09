@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+.d-flex {
+  display: flex;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+.mr-1 {
+  margin-right: 0.25rem;
+}
+
+.flex-column {
+  flex-direction: column;
+}
