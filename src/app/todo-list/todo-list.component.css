@@ -1,12 +1,14 @@
 .todo-card {
   background: green;
   max-width: 250px;
-  min-height: 50px;
+  min-height: 40px;
   border-radius: 4px;
   padding: 0.25rem;
   word-break: break-word;
   margin-bottom: 0.25rem;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .todo-card:not(:last-child) {
@@ -24,4 +26,11 @@
   line-height: 1.1;
   cursor: pointer;
   margin-left: 0.25rem;
+  align-self: flex-start;
+}
+
+.add-todo {
+  text-decoration: none;
+  color: initial;
+  width: 40px;
 }

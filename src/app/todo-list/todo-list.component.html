@@ -1,6 +1,7 @@
 <div class="d-flex">
   <div class="d-flex todo-list">
-    <div class="todo-card" *ngFor="let todo of todoList" >
+    <a routerLink="/create" class="todo-card add-todo" routerLinkActive="active"> &#10010; </a>
+    <div class="todo-card" *ngFor="let todo of todoList" (click)="openDetails(todo.id)">
       <span>
         {{ todo.name }}
       </span>

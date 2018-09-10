@@ -32,4 +32,8 @@ export class TodoListComponent implements OnInit {
       .subscribe(() => this.todoList = this.todoList.filter(todo => todo.id !== id));
   }
 
+  openDetails(id:string) {
+    return this.router.navigateByUrl(`${id}`)
+  }
+
 }

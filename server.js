@@ -21,6 +21,15 @@ app.post('/api/todos', ({ body }, res) => {
   }
 });
 
+app.get('/api/todos/:id', ({ params: { id } }, res) => {
+  try {
+    const todo = todoFunctions.getTodo(id);
+    res.send(todo);
+  } catch (error) {
+    res.status(404).send(error.message);
+  }
+});
+
 app.put('/api/todos/:id', ({ body, params: { id } }, res) => {
   try {
     const updatedTodo = todoFunctions.updateTodo(id, body);

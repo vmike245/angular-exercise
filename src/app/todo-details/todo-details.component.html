@@ -1,0 +1,23 @@
+<div class="d-flex flex-column">
+  <div class="d-flex flex-column mr-auto ml-auto todo-form-container">
+    <div class="d-flex flex-column">
+      <div class="d-flex field">
+        <span class="field-label">
+          Name
+        </span>
+        <span>
+          {{ todo.name }}
+        </span>
+      </div>
+      <div class="d-flex field">
+        <span class="field-label">
+          Id
+        </span>
+        <span>
+          {{ todo.id }}
+        </span>
+      </div>
+    </div>
+  </div>
+  <button type="button" (click)="editTodo(todo.id)" class="ml-auto mr-auto">Edit</button>
+</div>

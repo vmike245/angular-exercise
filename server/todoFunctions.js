@@ -6,12 +6,16 @@ const getTodos = () => {
   return todos;
 };
 
+const getTodo = (id) => {
+  return todos.find(todo => todo.id === id);
+}
+
 const addTodo = ({ name }) => {
   if (!name) {
     throw new Error('Name is required field');
   }
   const newTodo = { name, id: uuid() };
-  todos = [...todos, newTodo];
+  todos = [newTodo, ...todos];
   return newTodo;
 };
 
@@ -28,4 +32,4 @@ const deleteTodo = id => {
   todos = todos.filter(todo => todo.id !== id);
 };
 
-module.exports = { getTodos, addTodo, updateTodo, deleteTodo };
+module.exports = { getTodos, addTodo, updateTodo, deleteTodo, getTodo };
