@@ -5,7 +5,7 @@
       <span>
         {{ todo.name }}
       </span>
-      <span class="delete-button" (click)="deleteTodo(todo.id)">
+      <span class="delete-button" (click)="deleteTodo($event, todo.id)">
         &#10006;
       </span>
     </div>

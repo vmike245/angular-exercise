@@ -39,7 +39,7 @@ export class TodoEditComponent implements OnInit {
       headers: {
         'Content-Type': 'application/json'
       }
-    }).subscribe(() => this.router.navigateByUrl('/'));
+    }).subscribe(() => this.router.navigateByUrl('/todos'));
   }
 
 }

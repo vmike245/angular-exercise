@@ -33,7 +33,7 @@ export class TodoDetailsComponent implements OnInit {
   }
 
   editTodo(id: string) {
-    return this.router.navigateByUrl(`${id}/edit`)
+    return this.router.navigateByUrl(`todos/${id}/edit`)
   }
 
 }

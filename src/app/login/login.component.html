@@ -1,0 +1,19 @@
+<div class="d-flex">
+  <div class="d-flex flex-column mr-auto ml-auto login-container">
+    <div class="d-flex flex-column login-fields">
+      <label class="mr-1" for="login">
+        Username
+      </label>
+      <input #login id="login" type="text" (keyup.enter)="submitLogin(login.value, password.value)">
+    </div>
+    <div class="d-flex flex-column login-fields">
+        <label class="mr-1" for="password">
+          Password
+        </label>
+        <input #password id="password" type="password" (keyup.enter)="submitLogin(login.value, password.value)">
+      </div>
+    <button type="button" (click)="submitLogin(login.value, password.value)" class="ml-auto">
+      Login
+    </button>
+  </div>
+</div>

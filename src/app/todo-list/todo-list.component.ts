@@ -27,13 +27,14 @@ export class TodoListComponent implements OnInit {
       .subscribe((response: ToDoObject[]) => this.todoList = response);
   }
 
-  deleteTodo(id:string) {
+  deleteTodo(event: MouseEvent, id: string) {
+    event.stopPropagation()
     return this.http.delete(`api/todos/${id}`)
       .subscribe(() => this.todoList = this.todoList.filter(todo => todo.id !== id));
   }
 
   openDetails(id:string) {
-    return this.router.navigateByUrl(`${id}`)
+    return this.router.navigateByUrl(`todos/${id}`)
   }
 
 }

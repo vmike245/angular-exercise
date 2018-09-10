@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const todoFunctions = require('./server/todoFunctions');
+const loginFunctions = require('./server/loginFunctions');
 const portNumber = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
@@ -42,6 +43,16 @@ app.put('/api/todos/:id', ({ body, params: { id } }, res) => {
 app.delete('/api/todos/:id', ({ params: { id } }, res) => {
   todoFunctions.deleteTodo(id);
   res.send();
+});
+
+app.post('/api/login', ({ body }, res) => {
+  try {
+    const hash = loginFunctions.login(body);
+    res.cookie('user', hash)
+    res.send();
+  } catch (error) {
+    res.status(401).send(error.message);
+  }
 });
 
 // Create link to Angular build directory

@@ -1,0 +1,9 @@
+.login-container {
+  background: grey;
+  padding: 0.75rem;
+  border-radius: 4px;
+}
+
+.login-fields {
+  margin-bottom: 0.5rem;
+}
