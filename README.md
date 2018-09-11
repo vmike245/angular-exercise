@@ -1,27 +1,35 @@
 # AngularExercise
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
+A To-Do app that allows the creation, update, and deletion of to-dos
 
-## Development server
+# Getting Started
+## Prerequisites
+* NodeJS version 8.0.0 or later
+* NPM version 5.6.0 or later
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Install
+Run the following commands to get started
+```bash
+git clone https://github.com/vmike245/angular-exercise.git
+cd angular-exercise
+npm install
+```
 
-## Code scaffolding
+## Building the code
+Run the following command to build the application
+```bash
+npm run build
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Running the program
+To start up the web server run
+```bash
+npm run start-server
+```
+Navigate to `http://localhost:3000` to view the application
 
-## Build
+# Assumptions
+The todo list is all held in memory, so when the server is shut down the list of to-dos will no longer exist.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# Future work
+Right now the login page doesn't actually do anything. It would be good to actually have an authentication layer. Once that exists, I would want to store the list of to-dos per user. Right now it stores them all together, so different users will see each others to-dos.

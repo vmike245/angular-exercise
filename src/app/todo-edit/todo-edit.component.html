@@ -1,13 +1,13 @@
 <div class="d-flex">
     <div class="d-flex flex-column mr-auto ml-auto todo-form-container">
-      <div class="d-flex">
+      <div class="d-flex field">
         <label class="mr-1" for="todoName">
           Name
         </label>
-        <input #newTodo id="todoName" type="text" (keyup.enter)="addTodo(newTodo.value)" [value]="todo.name">
+        <input #newTodo id="todoName" type="text" (keyup.enter)="editTodo(newTodo.value)" [value]="todo.name">
       </div>
-      <button type="button" (click)="addTodo(newTodo.value)" class="ml-auto">
-        Create
+      <button type="button" (click)="editTodo(newTodo.value)" class="ml-auto">
+        Update
       </button>
     </div>
   </div>

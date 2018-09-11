@@ -34,7 +34,7 @@ export class TodoEditComponent implements OnInit {
       )
   }
 
-  addTodo(name: string) {
+  editTodo(name: string) {
     return this.http.put(`api/todos/${this.todo.id}`, { name }, {
       headers: {
         'Content-Type': 'application/json'
