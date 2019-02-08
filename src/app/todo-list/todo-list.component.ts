@@ -1,11 +1,7 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-
-interface ToDoObject {
-  name: string,
-  id: string
-}
+import { ToDoObject } from '../types';
 
 @Component({
   selector: 'app-todo-list',
@@ -15,7 +11,7 @@ interface ToDoObject {
 
 @Injectable()
 export class TodoListComponent implements OnInit {
-  todoList: ToDoObject[]
+  todoList: ToDoObject[];
 
   constructor(private http: HttpClient, private router: Router) {
     // this.todoList = [{ name: 'TESTQWEDFSWE', id: '1234'}, { name: 'TEST', id: '1234'}, { name: 'TEST', id: '1234'}, { name: 'TESTQWEDFSWE', id: '1234'}, { name: 'TEST', id: '1234'}, { name: 'TEST', id: '1234'}, { name: 'TESTQWEDFSWE', id: '1234'}, { name: 'TEST', id: '1234'}, { name: 'TEST', id: '1234'}, { name: 'TESTQWEDFSWE', id: '1234'}, { name: 'TEST', id: '1234'}, { name: 'TEST', id: '1234'}, { name: 'TESTQWEDFSWE', id: '1234'}, { name: 'TEST', id: '1234'}, { name: 'TEST', id: '1234'}, { name: 'TESTQWEDFSWE', id: '1234'}, { name: 'TEST', id: '1234'}, { name: 'TEST', id: '1234'}, { name: 'TESTQWEDFSWE', id: '1234'}, { name: 'TEST', id: '1234'}, { name: 'TEST', id: '1234'}, { name: 'TESTQWEDFSWE', id: '1234'}, { name: 'TEST', id: '1234'}, { name: 'TEST', id: '1234'}]
@@ -28,13 +24,13 @@ export class TodoListComponent implements OnInit {
   }
 
   deleteTodo(event: MouseEvent, id: string) {
-    event.stopPropagation()
+    event.stopPropagation();
     return this.http.delete(`api/todos/${id}`)
       .subscribe(() => this.todoList = this.todoList.filter(todo => todo.id !== id));
   }
 
-  openDetails(id:string) {
-    return this.router.navigateByUrl(`todos/${id}`)
+  openDetails(id: string) {
+    return this.router.navigateByUrl(`todos/${id}`);
   }
 
 }

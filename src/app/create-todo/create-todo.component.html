@@ -4,7 +4,7 @@
       <label class="mr-1" for="todoName">
         Name
       </label>
-      <input #newTodo id="todoName" type="text" (keyup.enter)="addTodo(newTodo.value)">
+      <input #newTodo id="todoName" type="text" required (keyup.enter)="addTodo(newTodo.value)">
     </div>
     <button type="button" (click)="addTodo(newTodo.value)" class="ml-auto">
       Create

@@ -1,11 +1,7 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-
-interface TodoObject {
-  name: string
-  id: string
-}
+import { ToDoObject } from '../types';
 
 @Component({
   selector: 'app-todo-details',
@@ -15,9 +11,9 @@ interface TodoObject {
 
 @Injectable()
 export class TodoDetailsComponent implements OnInit {
-  todo: TodoObject
+  todo: ToDoObject;
 
-  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute,) {
+  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) {
     this.todo = {
       name: '',
       id: ''
@@ -28,12 +24,12 @@ export class TodoDetailsComponent implements OnInit {
     this.route.params.subscribe(
       (params: ParamMap) =>
         this.http.get(`api/todos/${params['id']}`)
-          .subscribe((todo: TodoObject) => this.todo = todo)
-      )
+          .subscribe((todo: ToDoObject) => this.todo = todo)
+      );
   }
 
   editTodo(id: string) {
-    return this.router.navigateByUrl(`todos/${id}/edit`)
+    return this.router.navigateByUrl(`todos/${id}/edit`);
   }
 
 }
